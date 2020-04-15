@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap');
+
+body {
+    background-color: #444;
+    color: white;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Ubuntu, Georgia;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body > p {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+a, a:visited {
+    text-decoration-line: none;
+    color: white;
+}
+
+a:hover, a:visited:hover {
+    text-decoration-line: underline;
+}
+
+div {
+    background-color: #666;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 500px;
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+div.sep {
+    border-bottom: 1px solid white;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+div > * {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+div > h3 {
+    border-bottom: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    background-color: #4472C4;
+    margin-bottom: 0.3em;
+    padding-bottom: 0.6em;
+    padding-top: 0.6em;
+    margin-top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+h3 > i {
+    margin-right: 10px;
+    float: left;
+}
+
+h3 > i::before {
+    vertical-align: middle;
+}
+
+p {
+    max-width: 500px;
+}

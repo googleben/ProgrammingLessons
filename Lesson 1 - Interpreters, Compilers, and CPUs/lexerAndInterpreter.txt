@@ -1,0 +1,56 @@
+function readVariable() {
+    read the next character
+    the next chracter should be $, if its not, exit because thats wrong
+    read until theres a space, and store that in variableName
+    return Variable {name: variableName}
+}
+
+function readNumber() {
+    read until theres a space and store it in number
+    if number isnt a number, exit because thats wrong
+    return Number {number: number}
+}
+
+function readAssignment() {
+    readVariable() and store it in variable
+    if the next character is not = exit because thats wrong
+    readValue() and store it in value
+    return Assignment {variable: variable, value: value}
+}
+
+function readValue() {
+    if the next character is $ then readVariable() and store it in answer
+    otherwise readNumber() and store it in answer //answer = Number {number: 42}
+    //either answer = Variable{name: "some name"} or answer = Number {number: somenumber123}
+    if the next character is + then {
+        readValue() and store it in secondPart //secondPart = Number {number: 100}
+        return Plus {firstPart: answer, secondPart: secondPart} //Plus {firstPart: Number {number: 42}, secondPart: Number {number: 100}}
+    }
+    otherwise return answer
+}
+
+$SUM = 42 + 100
+
+Assignment {
+    variable: Variable {name: "SUM"}, 
+    value: Plus {
+        firstPart: Number {number: 42}, 
+        secondPart: Number {number: 100}
+    }
+}
+
+run(toRun: Variable OR Plus OR number OR assignment) {
+    if (toRun is a variable) {
+        if (the variables name has been used before) return its value
+        otherwise return 0
+    }
+    if (toRun is a number) {
+        return the numbers value
+    }
+    if (toRun is a Plus) {
+        return run(plus.firstPart) + run(plus.secondPart)
+    }
+    if (toRun is an assignment) {
+        set the variable to assigns value to be run(assignment.value)
+    }
+}

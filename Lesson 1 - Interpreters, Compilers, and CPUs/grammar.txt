@@ -1,0 +1,18 @@
+variable: ${any text with no spaces}
+assignment: {variable} = {value}
+value: {variable} OR {any number} OR {varialbe OR number} + {value}
+print: SHOW {variable}
+
+$MY_VARIABLE = 42
+$MY_VARIABLE_DOS = 100
+
+    {variable} = {value}
+    ${any text with no spaces} = {value}
+    $SUM = {value}
+    $SUM = {value} + {value}
+    $SUM = {any number} + {value}
+    $SUM = 42 + {value}
+    $SUM = 42 + {any number}
+    $SUM = 42 + 100
+
+SHOW $SUM

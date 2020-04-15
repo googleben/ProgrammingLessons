@@ -1,0 +1,19 @@
+number: {any number}
+value: {number} OR {number} + {value}
+print: print {value}
+
+function compile(toCompile) {
+    if (toCompile is a number) {
+        output "STORE " {the number} "IN REGISTER A"
+    }
+    if (toCompile is a plus) {
+        compile(plus.firstPart);
+        output "MOVE THE VALUE IN REGISTER A TO REGISTER B"
+        compile(plus.secondPart);
+        output "ADD REGISTER A TO REGISTER B AND STORE IT IN REGISTER A"
+    }
+    if (toCompile is a print) {
+        compile(print.value);
+        output "WRITE THE VALUE IN REGISTER A TO THE SCREEN"
+    }
+}
